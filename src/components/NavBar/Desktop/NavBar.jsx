@@ -4,6 +4,7 @@ import logo from "../../../assets/images/logo.svg";
 import MobileMenu from "../../../assets/images/icon-hamburger.svg";
 import MobileCloseIcon from "../../../assets/images/icon-close-menu.svg";
 import MobileNav from "../Mobile/MobileNav";
+import NavBg from "../../../assets/images/image-hero-desktop.jpg";
 
 const NavBar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -12,7 +13,8 @@ const NavBar = () => {
     setMobileMenu(!mobileMenu);
   };
   return (
-    <div className="test">
+    <>
+      <img src={NavBg} alt="nav-background" className="nav-background-img" />
       <header className="nav-outer-container">
         <nav className="nav-inner-container">
           <img src={logo} alt="logo" />
@@ -42,7 +44,7 @@ const NavBar = () => {
           {mobileMenu ? <MobileNav /> : null}
         </nav>
       </header>
-    </div>
+    </>
   );
 };
 
