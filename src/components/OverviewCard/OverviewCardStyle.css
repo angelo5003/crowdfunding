@@ -1,3 +1,32 @@
+.overview-card-outer-container {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 0.7rem;
+  margin-top: 1.2rem;
+}
+
 .overview-card-container {
   display: flex;
+  justify-content: space-around;
+  text-align: left;
+  align-items: center;
+}
+
+.overview-results {
+  color: black;
+}
+
+.overview-result-vertical-line {
+  border-color: hsl(0, 0%, 95%);
+  height: 5rem;
+}
+
+.overview-result-title {
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.overview-result-info {
+  font-size: 0.9em;
+  color: hsl(0, 0%, 48%);
 }
