@@ -8,13 +8,13 @@
 .progressbar-inner-container {
   /* height: 100%; */
   width: 60%;
-  background-color: red;
+  background-color: hsl(176, 50%, 47%);
   border-radius: 40px;
   text-align: right;
 }
 
 .progress-percentage {
   padding: 10px;
-  color: black;
+  color: #ffffff;
   font-weight: 500;
 }
