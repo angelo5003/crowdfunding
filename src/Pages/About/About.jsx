@@ -1,11 +1,13 @@
+import PledgeCard from "../../components/PledgeCard/PledgeCard";
+import data from "../../data/data.json";
 import "./AboutStyle.css";
 
 const About = () => {
+  console.log(`data:`, data);
   return (
     <div className="about-page-outer-container">
       <section className="about-page-inner-container">
         <h3 className="about-page-title">About this project</h3>
-
         <p className="about-page-info">
           The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform
           that elevates your screen to a more comfortable viewing height.
@@ -20,6 +22,10 @@ const About = () => {
           sticks to be stored under the stand.
         </p>
       </section>
+      {Array.isArray(data) &&
+        data.map((info) => {
+          return <PledgeCard key={info.id} info={info} />;
+        })}
     </div>
   );
 };
