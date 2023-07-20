@@ -4,9 +4,15 @@ import { PledgeCardPropTypes } from "../../utils/PropTypes";
 const PledgeCard = ({ info }) => {
   return (
     <div className="pledgecard-outer-container">
-      <article className="pledgecard-inner-container">
+      <article
+        className={`${
+          info.id === 3
+            ? "pledgecard-out-of-stock"
+            : "pledgecard-inner-container"
+        }`}
+      >
         <div className="pledgecard-title-container">
-          <h3>{info.productTitle}</h3>
+          <h3 className="pledge-product-title">{info.productTitle}</h3>
           <p className="pledgecard-pledge-text">{info.pledge}</p>
         </div>
         <p className="pledgecard-product-description">
@@ -14,9 +20,12 @@ const PledgeCard = ({ info }) => {
         </p>
         <div className="pledgecard-overview-container">
           <p className="pledgecard-pledge-products-left">
-            {info.productsLeft} left
+            {info.productsLeft}{" "}
+            <span className="pledgecard-left-text">left</span>
           </p>
-          <button className="pledgecard-btn">{info.productButton}</button>
+          <button className="pledgecard-btn" disabled>
+            {info.productButton}
+          </button>
         </div>
       </article>
     </div>

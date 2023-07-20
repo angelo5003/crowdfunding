@@ -37,6 +37,12 @@
     font-size: 1.5em;
     font-weight: 700;
   }
+
+  .pledgecard-left-text {
+    color: hsl(0, 0%, 55%);
+    font-size: 0.7em;
+    font-weight: 400;
+  }
 }
 
 .pledgecard-btn {
@@ -50,6 +56,27 @@
   outline: none;
   background-color: hsl(176, 50%, 47%);
   font-weight: 500;
+}
+
+.pledgecard-out-of-stock {
+  padding: 0.75rem;
+}
+
+.pledgecard-out-of-stock .pledgecard-btn:disabled {
+  background: #dddddd;
+  cursor: not-allowed;
+}
+
+.pledgecard-out-of-stock .pledge-product-title {
+  color: hsl(0, 0%, 48%);
+}
+
+.pledgecard-out-of-stock .pledgecard-pledge-text {
+  color: hsl(176, 50%, 65%);
+}
+
+.pledgecard-out-of-stock .pledgecard-pledge-products-left {
+  color: hsl(0, 0%, 48%);
 }
 
 @media screen and (max-width: 399px) {
