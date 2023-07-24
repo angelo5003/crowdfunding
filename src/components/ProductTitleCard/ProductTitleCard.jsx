@@ -1,8 +1,14 @@
+import { useState } from "react";
 import "./ProductTitleCardStyles.css";
 import BrandLogo from "../../assets/images/logo-mastercraft.svg";
 import BookMarkIcon from "../../assets/images/icon-bookmark.svg";
+import BookMarkIconChecked from "../../assets/images/icon-bookmarked-marked.svg";
 
 const ProductTitleCard = () => {
+  const [bookMarked, setBookMarked] = useState(false);
+  const handleBookMarkClick = () => {
+    setBookMarked(!bookMarked);
+  };
   return (
     <div className="product-title-card-outer-container">
       <img src={BrandLogo} alt="product-logo" className="brand-logo-img" />
@@ -15,10 +21,25 @@ const ProductTitleCard = () => {
           </p>
         </div>
         <div className="product-btn-container">
-          <button className="green-btn">Back this project</button>
-          <button className="bookmark-btn">
-            <img src={BookMarkIcon} alt="bookmark" /> Bookmark
+          <button className="green-btn" onClick={handleBookMarkClick}>
+            Back this project
           </button>
+          <div className="bookmark-btn">
+            <img
+              src={bookMarked ? BookMarkIconChecked : BookMarkIcon}
+              alt="bookmark"
+              className="bookmark-icon"
+            />{" "}
+            <div
+              className={
+                bookMarked
+                  ? "bookmark-btn-text-container-booked"
+                  : "bookmark-btn-text-container"
+              }
+            >
+              <p>{bookMarked ? "Bookmarked" : "Bookmark"}</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>

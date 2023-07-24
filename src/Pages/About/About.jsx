@@ -3,7 +3,6 @@ import data from "../../data/data.json";
 import "./AboutStyle.css";
 
 const About = () => {
-  console.log(`data:`, data);
   return (
     <div className="about-page-outer-container">
       <section className="about-page-inner-container">
