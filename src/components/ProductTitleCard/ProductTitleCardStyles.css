@@ -55,7 +55,11 @@
     text-align: center;
   }
 
-  .bookmark-btn {
+  .green-btn:hover {
+    background-color: hsl(176, 72%, 28%);
+  }
+
+  .bookmark-icon-container {
     display: flex;
     align-items: center;
     color: black;

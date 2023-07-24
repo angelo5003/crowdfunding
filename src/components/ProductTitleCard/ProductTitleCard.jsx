@@ -24,7 +24,7 @@ const ProductTitleCard = () => {
           <button className="green-btn" onClick={handleBookMarkClick}>
             Back this project
           </button>
-          <div className="bookmark-btn">
+          <div className="bookmark-icon-container">
             <img
               src={bookMarked ? BookMarkIconChecked : BookMarkIcon}
               alt="bookmark"
