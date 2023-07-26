@@ -42,7 +42,9 @@ const PledgeCard = ({ info }) => {
           </div>
         </article>
       </div>
-      {openProductModal ? <ProductModal /> : null}
+      {openProductModal ? (
+        <ProductModal openProductModal={openProductModal} />
+      ) : null}
     </>
   );
 };
