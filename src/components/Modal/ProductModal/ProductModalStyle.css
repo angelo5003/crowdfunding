@@ -11,8 +11,8 @@
   align-items: center;
 }
 
-.modal-container {
-  display: flex;
-  width: 730px;
-  height: 900px;
+.modal-outer-container {
+  width: 45rem;
+  border-radius: 0.75rem;
+  /* height: 900px;  */
 }

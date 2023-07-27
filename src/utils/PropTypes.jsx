@@ -11,3 +11,7 @@ export const PledgeCardPropTypes = {
 export const ProductModalPropTypes = {
   openProductModal: PropTypes.bool.isRequired,
 };
+
+export const ShowProductModalPropTypes = {
+  handleShowProductModal: PropTypes.func.isRequired,
+};

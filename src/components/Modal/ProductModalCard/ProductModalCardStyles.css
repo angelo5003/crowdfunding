@@ -5,9 +5,10 @@
   }
 
   .modal-details-outer-container {
-    border: 5px solid red;
+    border: 3px solid #f4f4f4;
     margin: 2.5rem;
     padding: 1.25rem;
+    border-radius: 0.31rem;
   }
 
   .modal-details-inner-container {
@@ -30,5 +31,16 @@
 
   .modal-details-text {
     color: #b2b2b2;
+  }
+
+  .modal-details-left-numbers {
+    color: #000000;
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+
+  .modal-details-left {
+    color: #b2b2b2;
+    font-size: 0.8em;
   }
 }

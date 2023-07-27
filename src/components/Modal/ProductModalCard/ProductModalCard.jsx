@@ -1,11 +1,13 @@
 import "./ProductModalCardStyles.css";
+import ModalCloseBtn from "../ModalCloseBtn/ModalCloseBtn";
+import { ShowProductModalPropTypes } from "../../../utils/PropTypes";
 import backerData from "../../../data/backerData.json";
 
-const ProductModalCard = () => {
-  console.log(`backerData:`, backerData);
+const ProductModalCard = ({ handleShowProductModal }) => {
   return (
     <>
       <section className="modal-outer-container">
+        <ModalCloseBtn handleShowProductModal={handleShowProductModal} />
         <h3 className="modal-title">Back this project</h3>
         <p className="modal-intro-text">
           Want to support us in bringing Mastercraft Bamboo Monitor Riser to the
@@ -21,7 +23,10 @@ const ProductModalCard = () => {
                   <h3 className="modal-detail-title">
                     Pledge ${data.backerPledge} or more
                   </h3>
-                  <p>{data.backerLeft} left</p>
+                  <p className="modal-details-left-numbers">
+                    {data.backerLeft}{" "}
+                    <span className="modal-details-left">left</span>
+                  </p>
                 </div>
                 <p className="modal-details-text">{data.backerText}</p>
               </div>
@@ -31,5 +36,7 @@ const ProductModalCard = () => {
     </>
   );
 };
+
+ProductModalCard.propTypes = ShowProductModalPropTypes;
 
 export default ProductModalCard;
