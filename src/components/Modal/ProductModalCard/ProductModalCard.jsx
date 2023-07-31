@@ -5,11 +5,11 @@ import { ShowProductModalPropTypes } from "../../../utils/PropTypes";
 import backerData from "../../../data/backerData.json";
 
 const ProductModalCard = ({ handleShowProductModal }) => {
-  const [selectedProduct, setSelectedProduct] = useState(""); // keep track of the currently selected radio btn. The empty string is to make sure that the default value is empty
-  const handleInputChange = (e) => {
-    const { name } = e.target;
-    setSelectedProduct(name);
-    console.log(`clicked on the:`, name);
+  const [favorite, setFavorite] = useState("");
+
+  const handleChange = (e) => {
+    setFavorite(e.target.value);
+    console.log(`you clicked on:`, favorite);
   };
   return (
     <>
@@ -26,11 +26,10 @@ const ProductModalCard = ({ handleShowProductModal }) => {
               <div className="modal-details-outer-container" key={data.id}>
                 <div className="modal-details-inner-container">
                   <input
-                    type="radio"
-                    name="backerOption" // use the same name for all radio btn in the group
-                    value={data.id} // set the value of the radio btn to data.id
-                    checked={selectedProduct === data.id} // check if the radio btn is selected
-                    onChange={handleInputChange}
+                    type="radio" // set the type of the input field to a radio btn
+                    name="backer" // Give all the radio buttons in this group the same name, "backer".This tells the browser that these radio buttons belong to the same group and only one can be selected at a time.
+                    value={data.name} // Set the value of the radio button to the name of the data
+                    onChange={handleChange} // add an onChange event handler to handle changes to the radio button
                   />
                   <h3 className="modal-detail-title">{data.backerTitle}</h3>
                   <h3 className="modal-detail-title">

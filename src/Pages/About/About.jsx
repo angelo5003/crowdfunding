@@ -1,4 +1,5 @@
 import PledgeCard from "../../components/PledgeCard/PledgeCard";
+
 import data from "../../data/data.json";
 import "./AboutStyle.css";
 
@@ -21,6 +22,7 @@ const About = () => {
           sticks to be stored under the stand.
         </p>
       </section>
+
       {Array.isArray(data) &&
         data.map((info) => {
           return <PledgeCard key={info.id} info={info} />;
