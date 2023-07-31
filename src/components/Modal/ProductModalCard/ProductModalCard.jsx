@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./ProductModalCardStyles.css";
 import ModalCloseBtn from "../ModalCloseBtn/ModalCloseBtn";
 import { ShowProductModalPropTypes } from "../../../utils/PropTypes";
@@ -11,6 +11,22 @@ const ProductModalCard = ({ handleShowProductModal }) => {
     setFavorite(e.target.value);
     console.log(`you clicked on:`, favorite);
   };
+
+  useEffect(() => {
+    const handleCloseModalOnEsc = (e) => {
+      // check if the Escape key is pressed
+      if (e.key === "Escape") {
+        // close the  modal
+        handleShowProductModal();
+      }
+    };
+    window.addEventListener("keydown", handleCloseModalOnEsc);
+    // remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("keydown", handleCloseModalOnEsc);
+    };
+  }, [handleShowProductModal]);
+
   return (
     <>
       <section className="modal-outer-container">
