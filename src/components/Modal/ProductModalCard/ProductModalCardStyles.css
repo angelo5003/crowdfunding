@@ -11,6 +11,10 @@
     border-radius: 0.31rem;
   }
 
+  .modal-details-outer-container.selected {
+    border-color: hsl(176, 72%, 28%);
+  }
+
   .modal-details-inner-container {
     display: flex;
     justify-content: space-between;

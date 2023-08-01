@@ -9,7 +9,7 @@ const ProductModalCard = ({ handleShowProductModal }) => {
 
   const handleChange = (e) => {
     setFavorite(e.target.value);
-    console.log(`you clicked on:`, favorite);
+    console.log(`you clicked on favorite:`, favorite);
   };
 
   useEffect(() => {
@@ -39,7 +39,12 @@ const ProductModalCard = ({ handleShowProductModal }) => {
         {Array.isArray(backerData) &&
           backerData.map((data) => {
             return (
-              <div className="modal-details-outer-container" key={data.id}>
+              <div
+                className={`modal-details-outer-container ${
+                  favorite === data.name ? "selected" : ""
+                }`} // check if favorite === to the data.name that is selected and if that is true add the className selected to it, if not don't change the className
+                key={data.id}
+              >
                 <div className="modal-details-inner-container">
                   <input
                     type="radio" // set the type of the input field to a radio btn
