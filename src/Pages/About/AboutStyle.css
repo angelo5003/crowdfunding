@@ -4,6 +4,7 @@
   padding: 20px;
   margin-top: 1.2rem;
   border-radius: 0.7rem;
+  border: 1px solid hsl(0, 0%, 90%);
 }
 
 .about-page-inner-container {

@@ -12,7 +12,7 @@ const ProductTitleCard = () => {
   return (
     <div className="product-title-card-outer-container">
       <img src={BrandLogo} alt="product-logo" className="brand-logo-img" />
-      <section>
+      <section className="product-title-card-inner-container">
         <div className="product-title-container">
           <h2 className="product-title">Mastercraft Bamboo Monitor Riser</h2>
           <p className="product-info">

@@ -34,6 +34,10 @@
 
   .dropdown-pledge-input {
     width: 3.75rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
   }
 
   .dropdown-pledge-btn {

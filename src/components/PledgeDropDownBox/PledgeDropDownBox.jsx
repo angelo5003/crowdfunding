@@ -1,4 +1,5 @@
 import "./PledgeDropDownBoxStyles.css";
+import { LiaDollarSignSolid } from "react-icons/lia";
 
 const PledgeDropDownBox = () => {
   return (
@@ -8,7 +9,7 @@ const PledgeDropDownBox = () => {
         <p className="dropdown-pledge-title">Enter your pledge</p>
         <div className="dropdown-pledge-controls">
           <span className="dropdown-pledge-input-container">
-            $
+            <LiaDollarSignSolid />
             <input type="text" className="dropdown-pledge-input" />
           </span>
           <button className="dropdown-pledge-btn">Continue</button>
