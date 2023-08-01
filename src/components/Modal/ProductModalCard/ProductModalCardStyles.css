@@ -11,8 +11,12 @@
     border-radius: 0.31rem;
   }
 
+  .radio-btn {
+    cursor: pointer;
+  }
+
   .modal-details-outer-container.selected {
-    border-color: hsl(176, 72%, 28%);
+    border-color: hsl(176, 50%, 47%);
   }
 
   .modal-details-inner-container {

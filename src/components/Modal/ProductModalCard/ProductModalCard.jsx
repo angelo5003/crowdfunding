@@ -3,13 +3,13 @@ import "./ProductModalCardStyles.css";
 import ModalCloseBtn from "../ModalCloseBtn/ModalCloseBtn";
 import { ShowProductModalPropTypes } from "../../../utils/PropTypes";
 import backerData from "../../../data/backerData.json";
+import PledgeDropDownBox from "../../PledgeDropDownBox/PledgeDropDownBox";
 
 const ProductModalCard = ({ handleShowProductModal }) => {
   const [favorite, setFavorite] = useState("");
 
   const handleChange = (e) => {
     setFavorite(e.target.value);
-    console.log(`you clicked on favorite:`, favorite);
   };
 
   useEffect(() => {
@@ -42,11 +42,12 @@ const ProductModalCard = ({ handleShowProductModal }) => {
               <div
                 className={`modal-details-outer-container ${
                   favorite === data.name ? "selected" : ""
-                }`} // check if favorite === to the data.name that is selected and if that is true add the className selected to it, if not don't change the className
+                }`} // check if favorite (is equal) === to the data.name that is selected and if that is true add the className selected to it, if it is not true don't change the className
                 key={data.id}
               >
                 <div className="modal-details-inner-container">
                   <input
+                    className="radio-btn"
                     type="radio" // set the type of the input field to a radio btn
                     name="backer" // Give all the radio buttons in this group the same name, "backer".This tells the browser that these radio buttons belong to the same group and only one can be selected at a time.
                     value={data.name} // Set the value of the radio button to the name of the data
@@ -62,6 +63,7 @@ const ProductModalCard = ({ handleShowProductModal }) => {
                   </p>
                 </div>
                 <p className="modal-details-text">{data.backerText}</p>
+                {favorite === data.name ? <PledgeDropDownBox /> : null}
               </div>
             );
           })}
