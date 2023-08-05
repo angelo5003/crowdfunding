@@ -1,8 +1,9 @@
 import "./SuccesModalStyles.css";
 import { Portal } from "react-portal";
 import SuccesLogo from "../../../assets/images/icon-check.svg";
+import { ShowSuccesModalPropTypes } from "../../../utils/PropTypes";
 
-const SuccesModal = () => {
+const SuccesModal = ({ handleShowSuccesModal }) => {
   return (
     <>
       <Portal>
@@ -19,12 +20,18 @@ const SuccesModal = () => {
               sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
               an email once our campaign is completed.
             </p>
-            <button className="succes-modal-btn">Got It!</button>
+            <button
+              className="succes-modal-btn"
+              onClick={handleShowSuccesModal}
+            >
+              Got It!
+            </button>
           </div>
         </div>
       </Portal>
     </>
   );
 };
+SuccesModal.propTypes = ShowSuccesModalPropTypes;
 
 export default SuccesModal;

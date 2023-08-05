@@ -63,7 +63,11 @@ const ProductModalCard = ({ handleShowProductModal }) => {
                   </p>
                 </div>
                 <p className="modal-details-text">{data.backerText}</p>
-                {favorite === data.name ? <PledgeDropDownBox /> : null}
+                {favorite === data.name ? (
+                  <PledgeDropDownBox
+                    handleShowProductModal={handleShowProductModal}
+                  />
+                ) : null}
               </div>
             );
           })}

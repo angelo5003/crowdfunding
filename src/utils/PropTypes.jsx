@@ -15,3 +15,7 @@ export const ProductModalPropTypes = {
 export const ShowProductModalPropTypes = {
   handleShowProductModal: PropTypes.func.isRequired,
 };
+
+export const ShowSuccesModalPropTypes = {
+  handleShowProductModal: PropTypes.func.isRequired,
+};
