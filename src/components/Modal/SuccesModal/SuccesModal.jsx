@@ -3,7 +3,7 @@ import { Portal } from "react-portal";
 import SuccesLogo from "../../../assets/images/icon-check.svg";
 import { ShowSuccesModalPropTypes } from "../../../utils/PropTypes";
 
-const SuccesModal = ({ handleShowSuccesModal }) => {
+const SuccesModal = ({ handleSubmit }) => {
   return (
     <>
       <Portal>
@@ -20,10 +20,7 @@ const SuccesModal = ({ handleShowSuccesModal }) => {
               sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
               an email once our campaign is completed.
             </p>
-            <button
-              className="succes-modal-btn"
-              onClick={handleShowSuccesModal}
-            >
+            <button className="succes-modal-btn" onClick={handleSubmit}>
               Got It!
             </button>
           </div>

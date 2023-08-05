@@ -6,10 +6,29 @@ import backerData from "../../../data/backerData.json";
 import PledgeDropDownBox from "../../PledgeDropDownBox/PledgeDropDownBox";
 
 const ProductModalCard = ({ handleShowProductModal }) => {
-  const [favorite, setFavorite] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState("");
+  const [pledgeAmount, setPledgeAmount] = useState("");
+  const [showSuccesModal, setShowSuccesModal] = useState(false);
 
   const handleChange = (e) => {
-    setFavorite(e.target.value);
+    setSelectedProduct(e.target.value);
+  };
+
+  const handleShowSuccesModal = () => {
+    setShowSuccesModal(!showSuccesModal);
+    console.log(`you clicked on the continue button`);
+  };
+
+  const handleChangeInput = (e) => {
+    e.preventDefault();
+
+    setPledgeAmount(Number(e.target.value));
+    console.log(`pledgeamount typed:`, typeof pledgeAmount);
+  };
+
+  const handleSubmit = () => {
+    setPledgeAmount("");
+    handleShowSuccesModal();
   };
 
   useEffect(() => {
@@ -41,7 +60,7 @@ const ProductModalCard = ({ handleShowProductModal }) => {
             return (
               <div
                 className={`modal-details-outer-container ${
-                  favorite === data.name ? "selected" : ""
+                  selectedProduct === data.name ? "selected" : ""
                 }`} // check if favorite (is equal) === to the data.name that is selected and if that is true add the className selected to it, if it is not true don't change the className
                 key={data.id}
               >
@@ -63,9 +82,13 @@ const ProductModalCard = ({ handleShowProductModal }) => {
                   </p>
                 </div>
                 <p className="modal-details-text">{data.backerText}</p>
-                {favorite === data.name ? (
+                {selectedProduct === data.name ? (
                   <PledgeDropDownBox
                     handleShowProductModal={handleShowProductModal}
+                    handleChangeInput={handleChangeInput}
+                    pledgeAmount={pledgeAmount}
+                    handleSubmit={handleSubmit}
+                    showSuccesModal={showSuccesModal}
                   />
                 ) : null}
               </div>

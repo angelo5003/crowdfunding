@@ -1,24 +1,15 @@
-import { useState } from "react";
 import SuccesModal from "../Modal/SuccesModal/SuccesModal";
 import "./PledgeDropDownBoxStyles.css";
 import { LiaDollarSignSolid } from "react-icons/lia";
 import { ShowSuccesModalPropTypes } from "../../utils/PropTypes";
 
-const PledgeDropDownBox = () => {
-  const [showSuccesModal, setShowSuccesModal] = useState(false);
-  const [pledgeAmount, setPledgeAmount] = useState("");
-
-  const handleChange = (e) => {
-    e.preventDefault();
-
-    setPledgeAmount(e.target.value);
-    console.log(`pledgeamount typed:`, pledgeAmount);
-  };
-
-  const handleShowSuccesModal = () => {
-    setShowSuccesModal(!showSuccesModal);
-    console.log(`you clicked on the continue button`);
-  };
+const PledgeDropDownBox = ({
+  handleShowProductModal,
+  pledgeAmount,
+  handleChangeInput,
+  handleSubmit,
+  showSuccesModal,
+}) => {
   return (
     <section className="dropdown-pledge-outer-container">
       <hr className="dropdown-pledge-hr-line" />
@@ -31,17 +22,17 @@ const PledgeDropDownBox = () => {
               type="text"
               className="dropdown-pledge-input"
               value={pledgeAmount}
-              onChange={handleChange}
+              onChange={handleChangeInput}
             />
           </form>
-          <button
-            className="dropdown-pledge-btn"
-            onClick={handleShowSuccesModal}
-          >
+          <button className="dropdown-pledge-btn" onClick={handleSubmit}>
             Continue
           </button>
           {showSuccesModal ? (
-            <SuccesModal handleShowSuccesModal={handleShowSuccesModal} />
+            <SuccesModal
+              handleSubmit={handleSubmit}
+              handleShowProductModal={handleShowProductModal}
+            />
           ) : null}
         </div>
       </div>
